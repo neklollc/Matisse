@@ -27,6 +27,9 @@
     <string name="empty_text">No media yet</string>
     <string name="button_ok">OK</string>
 
+    <string name="title_selected">%d Selected</string>
+    <string name="menu_done">Done</string>
+
     <string name="error_over_count_default">You have reached max selectable</string>
     <string name="error_over_count">You can only select up to %1$d media files</string>
     <string name="error_under_quality">Under quality</string>

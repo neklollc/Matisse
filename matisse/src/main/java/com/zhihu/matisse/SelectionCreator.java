@@ -33,6 +33,7 @@ import com.zhihu.matisse.internal.entity.SelectionSpec;
 import com.zhihu.matisse.listener.OnCheckedListener;
 import com.zhihu.matisse.listener.OnSelectedListener;
 import com.zhihu.matisse.ui.MatisseActivity;
+import com.zhihu.matisse.ui.RakenMatisseActivity;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -354,7 +355,7 @@ public final class SelectionCreator {
             return;
         }
 
-        Intent intent = new Intent(activity, MatisseActivity.class);
+        Intent intent = new Intent(activity, RakenMatisseActivity.class);
 
         Fragment fragment = mMatisse.getFragment();
         if (fragment != null) {

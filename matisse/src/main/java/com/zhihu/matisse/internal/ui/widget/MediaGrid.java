@@ -36,6 +36,11 @@ public class MediaGrid extends SquareFrameLayout implements View.OnClickListener
     private ImageView mGifTag;
     private TextView mVideoDuration;
 
+    private View mCheckedView;
+    private View mCheckedBorderView;
+
+    private ImageView mIconView;
+
     private Item mMedia;
     private PreBindInfo mPreBindInfo;
     private OnMediaGridClickListener mListener;
@@ -57,6 +62,11 @@ public class MediaGrid extends SquareFrameLayout implements View.OnClickListener
         mCheckView = (CheckView) findViewById(R.id.check_view);
         mGifTag = (ImageView) findViewById(R.id.gif);
         mVideoDuration = (TextView) findViewById(R.id.video_duration);
+
+        mCheckedView = findViewById(R.id.checked);
+        mCheckedBorderView = findViewById(R.id.checked_border);
+
+        mIconView = findViewById(R.id.icon);
 
         mThumbnail.setOnClickListener(this);
         mCheckView.setOnClickListener(this);
@@ -94,6 +104,7 @@ public class MediaGrid extends SquareFrameLayout implements View.OnClickListener
     }
 
     private void initCheckView() {
+        mCheckedView.setVisibility(View.GONE);
         mCheckView.setCountable(mPreBindInfo.mCheckViewCountable);
     }
 
@@ -106,6 +117,13 @@ public class MediaGrid extends SquareFrameLayout implements View.OnClickListener
     }
 
     public void setChecked(boolean checked) {
+        if (checked) {
+            mCheckedView.setVisibility(View.VISIBLE);
+            mCheckedBorderView.setVisibility(View.VISIBLE);
+        } else {
+            mCheckedView.setVisibility(View.GONE);
+            mCheckedBorderView.setVisibility(View.GONE);
+        }
         mCheckView.setChecked(checked);
     }
 
@@ -123,8 +141,12 @@ public class MediaGrid extends SquareFrameLayout implements View.OnClickListener
         if (mMedia.isVideo()) {
             mVideoDuration.setVisibility(VISIBLE);
             mVideoDuration.setText(DateUtils.formatElapsedTime(mMedia.duration / 1000));
+
+            mIconView.setVisibility(View.VISIBLE);
+            mIconView.setImageResource(R.drawable.ic_video);
         } else {
             mVideoDuration.setVisibility(GONE);
+            mIconView.setVisibility(View.GONE);
         }
     }
 

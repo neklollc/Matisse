@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2017 Zhihu Inc.
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,32 +18,61 @@
     <ImageView
         android:id="@+id/media_thumbnail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <com.zhihu.matisse.internal.ui.widget.CheckView
         android:id="@+id/check_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|right"/>
+        android:layout_gravity="top|right"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/gif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
-        android:layout_marginBottom="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_gif"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/video_duration"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_gravity="bottom"
+        android:background="@color/primary_dark"
+        android:gravity="end"
+        android:paddingTop="2dp"
+        android:paddingEnd="4dp"
+        android:paddingRight="4dp"
+        android:paddingBottom="2dp"
         android:textColor="@android:color/white"
         android:textSize="12sp"
-        android:visibility="gone"/>
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_gravity="center"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/checked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:padding="8dp"
+        android:src="@drawable/ic_selected_media"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/checked_border"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_border_red"
+        android:visibility="gone" />
 </merge>
