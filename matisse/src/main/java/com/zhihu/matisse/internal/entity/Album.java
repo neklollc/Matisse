@@ -21,10 +21,11 @@ import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 
 import com.zhihu.matisse.R;
 import com.zhihu.matisse.internal.loader.AlbumLoader;
+
+import androidx.annotation.Nullable;
 
 public class Album implements Parcelable {
     public static final Creator<Album> CREATOR = new Creator<Album>() {

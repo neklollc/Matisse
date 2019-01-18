@@ -32,13 +32,13 @@
             </intent-filter>
         </activity>
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="com.zhihu.matisse.sample.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths_public"></meta-data>
+                android:resource="@xml/file_paths_public"/>
         </provider>
     </application>
 

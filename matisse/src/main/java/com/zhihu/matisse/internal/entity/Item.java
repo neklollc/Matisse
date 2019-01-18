@@ -22,9 +22,10 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 
 import com.zhihu.matisse.MimeType;
+
+import androidx.annotation.Nullable;
 
 public class Item implements Parcelable {
     public static final Creator<Item> CREATOR = new Creator<Item>() {

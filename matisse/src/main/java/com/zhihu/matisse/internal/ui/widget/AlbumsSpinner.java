@@ -20,8 +20,6 @@ import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.ListPopupWindow;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CursorAdapter;
@@ -30,6 +28,9 @@ import android.widget.TextView;
 import com.zhihu.matisse.R;
 import com.zhihu.matisse.internal.entity.Album;
 import com.zhihu.matisse.internal.utils.Platform;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.ListPopupWindow;
 
 public class AlbumsSpinner {
 
