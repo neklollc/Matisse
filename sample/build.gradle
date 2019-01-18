@@ -16,15 +16,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId 'com.zhihu.matisse.sample'
         minSdkVersion 14
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.1"
     }
     lintOptions {
         abortOnError false
@@ -35,18 +35,26 @@ android {
     }
 }
 
-ext.supportLibVersion = '27.1.1'
+ext.rxJavaVersion = '2.2.4'
+ext.rxPermissionsVersion = '0.9.5@aar'
+
+ext.glideVersion = '4.8.0'
+ext.picassoVersion = '2.5.2'
+
+ext.appCompatVersion = '1.0.2'
+ext.supportLibVersion = '1.0.0'
 
 dependencies {
-    implementation project(':matisse')
-
-//    implementation 'com.zhihu.android:matisse:0.5.1-beta1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "com.android.support:appcompat-v7:${supportLibVersion}"
-    implementation "com.android.support:recyclerview-v7:${supportLibVersion}"
-    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation project(':matisse')
+
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "com.tbruyelle.rxpermissions2:$rxPermissionsVersion"
+
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.recyclerview:recyclerview:$supportLibVersion"
 }

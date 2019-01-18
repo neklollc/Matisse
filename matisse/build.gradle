@@ -33,19 +33,24 @@ android {
 }
 
 dependencies {
-    implementation project(':base')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    def extProject = project.rootProject.ext
-    def extVersionSupport = extProject.android.supportVersion
+    implementation project(':base')
 
-    implementation "com.android.support:support-v4:${extVersionSupport}"
-    implementation "com.android.support:appcompat-v7:${extVersionSupport}"
-    implementation "com.android.support:support-annotations:${extVersionSupport}"
-    implementation "com.android.support:recyclerview-v7:${extVersionSupport}"
-    implementation "com.android.support:design:${extVersionSupport}"
+    def extProject = rootProject.ext
+    def extAndroidX = extProject.androidX
+    implementation "androidx.appcompat:appcompat:$extAndroidX.appCompatVersion"
+    def extSupportVersion = extAndroidX.supportVersion
+    implementation "androidx.legacy:legacy-support-v4:$extSupportVersion"
+    implementation "androidx.annotation:annotation:$extSupportVersion"
+    implementation "androidx.legacy:legacy-support-v4:$extSupportVersion"
 
-    implementation 'it.sephiroth.android.library.imagezoom:library:1.0.4'
-    compileOnly "com.github.bumptech.glide:glide:${extProject.images.glideVersion}"
-    compileOnly "com.squareup.picasso:picasso:${extProject.images.picassoVersion}"
+    def extImages = extProject.images
+    compileOnly "com.github.bumptech.glide:glide:$extImages.glideVersion"
+    compileOnly "com.squareup.picasso:picasso:$extImages.picassoVersion"
+
+    implementation "com.google.android.material:material:$extSupportVersion"
+    implementation "androidx.recyclerview:recyclerview:$extSupportVersion"
+
+    implementation "it.sephiroth.android.library.imagezoom:library:$extProject.submodules.matisseImageZoomVersion"
 }
