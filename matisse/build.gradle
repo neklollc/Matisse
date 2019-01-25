@@ -40,17 +40,15 @@ dependencies {
     def extProject = rootProject.ext
     def extAndroidX = extProject.androidX
     implementation "androidx.appcompat:appcompat:$extAndroidX.appCompatVersion"
-    def extSupportVersion = extAndroidX.supportVersion
-    implementation "androidx.legacy:legacy-support-v4:$extSupportVersion"
-    implementation "androidx.annotation:annotation:$extSupportVersion"
-    implementation "androidx.legacy:legacy-support-v4:$extSupportVersion"
+    implementation "androidx.legacy:legacy-support-v4:$extAndroidX.legacyVersion"
+    implementation "androidx.annotation:annotation:$extAndroidX.annotationVersion"
 
     def extImages = extProject.images
     compileOnly "com.github.bumptech.glide:glide:$extImages.glideVersion"
     compileOnly "com.squareup.picasso:picasso:$extImages.picassoVersion"
 
-    implementation "com.google.android.material:material:$extSupportVersion"
-    implementation "androidx.recyclerview:recyclerview:$extSupportVersion"
+    implementation "com.google.android.material:material:$extAndroidX.materialVersion"
+    implementation "androidx.recyclerview:recyclerview:$extAndroidX.recyclerVersion"
 
     implementation "it.sephiroth.android.library.imagezoom:library:$extProject.submodules.matisseImageZoomVersion"
 }
